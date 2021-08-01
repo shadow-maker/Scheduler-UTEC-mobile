@@ -2,14 +2,15 @@ package com.grupoDBP.schedulerutec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,7 +35,7 @@ public class ProfileViewActivity extends AppCompatActivity {
     }
 
     // FUNCTION: CREATE VIEW FOR Schedule
-    public Button CreateScheduleView(String schedule_title, String schedule_id) {
+    private Button createScheduleView(String schedule_title, String schedule_id) {
         Button scheduleView = new Button(this);
         scheduleView.setText(getString(R.string.generic_schedule_text_view, schedule_title, schedule_id));
         scheduleView.setTag(R.id.TAG_SCHEDULE_ID, schedule_id);
@@ -42,8 +43,16 @@ public class ProfileViewActivity extends AppCompatActivity {
         return scheduleView;
     }
 
+    // FUNCTION: CREATE SCHEDULE AND APPEND TO LIST
+    private void createAndAppendScheduleView(LinearLayout scheduleList, String schedule_title, String schedule_id){
+        // Create schedule view
+        Button scheduleView = createScheduleView(schedule_title, schedule_id);
+        // Append
+        scheduleList.addView(scheduleView);
+    }
+
     // FUNCTION: LOAD SCHEDULES INTO LinearLayout FROM JSONArray
-    public void LoadScheduleList(JSONArray schedule_array, LinearLayout scheduleList, String alternative_text) throws JSONException {
+    private void loadScheduleList(JSONArray schedule_array, LinearLayout scheduleList, String alternative_text) throws JSONException {
         // If there are schedules process them
         if (schedule_array.length() > 0) {
             Log.v(this.getClass().getName(), "Schedules found. Now loading data ...");
@@ -58,8 +67,7 @@ public class ProfileViewActivity extends AppCompatActivity {
                 //String schedule_url = s.getString("horario_url");
 
                 // Create schedule view
-                TextView scheduleView = CreateScheduleView(schedule_title, schedule_id);
-                scheduleList.addView(scheduleView);
+                createAndAppendScheduleView(scheduleList, schedule_title, schedule_id);
             }
         }
         // Else display empty text
@@ -115,7 +123,7 @@ public class ProfileViewActivity extends AppCompatActivity {
             JSONArray schedule_array = jsonData.getJSONArray("horarios");
             // Load data to layout
             Log.v(this.getClass().getName(), "Starting Load of Student's schedules.");
-            LoadScheduleList(schedule_array, scheduleList, getString(R.string.profile_view_schedule_text_view_empty));
+            loadScheduleList(schedule_array, scheduleList, getString(R.string.profile_view_schedule_text_view_empty));
 
         } catch (JSONException e) {
             // Error Handeling
@@ -131,7 +139,7 @@ public class ProfileViewActivity extends AppCompatActivity {
             JSONArray favorite_array = jsonData.getJSONArray("favoritos");
             // Load data to layout
             Log.v(this.getClass().getName(), "Starting Load of Student's favorites.");
-            LoadScheduleList(favorite_array, favoriteList, getString(R.string.profile_view_favorite_text_view_empty));
+            loadScheduleList(favorite_array, favoriteList, getString(R.string.profile_view_favorite_text_view_empty));
         } catch (JSONException e) {
             // Error Handeling
             Log.e(this.getClass().getName(), "Invalid API Response (No favorites array found)");
@@ -149,4 +157,47 @@ public class ProfileViewActivity extends AppCompatActivity {
     }
 
 
+    // ------------ BUTTON CLICK LISTENERS -----------------------
+    public void onClickCreateScheduleButton(View view){
+        // Retrieve data
+        EditText titleInput = findViewById(R.id.profile_new_schedule_title);
+        String schedule_title = titleInput.getText().toString();
+
+        // Create JSON
+        JSONObject submitJSON = new JSONObject();
+        try {
+            submitJSON.put("horario_titulo", schedule_title);
+        } catch (JSONException e) {
+            Log.e(this.getClass().getName(),"Unexpected error creating JSON for new schedule");
+            e.printStackTrace();
+            return;
+        }
+
+        // Submit JSON through API
+        // Sample response
+        boolean success = true;
+        String schedule_id = "10";
+
+        // Update according to response
+        if (success){
+            // Get layout
+            LinearLayout scheduleList = findViewById(R.id.profile_schedule_list);
+            // Update activty
+            createAndAppendScheduleView(scheduleList, schedule_title, schedule_id);
+
+        }
+        else {
+            // Handle error
+            Toast.makeText(this, getString(R.string.generic_connection_error), Toast.LENGTH_SHORT).show();
+            Log.w(this.getClass().getName(),"API response was unsuccesful");
+        }
+    }
+
+    public void onClickEditProfileButton(View view){
+
+    }
+
+    public void onClickDeleteProfileButton(View view){
+
+    }
 }

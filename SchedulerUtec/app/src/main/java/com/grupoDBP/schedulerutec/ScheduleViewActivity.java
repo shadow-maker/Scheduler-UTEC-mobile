@@ -13,10 +13,11 @@ public class ScheduleViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_schedule_view);
+
         Intent i = getIntent();
         String schedule_id = i.getStringExtra(EXTRA_SCHEDULE_ID);
         Log.v(this.getClass().getName(), "Schedule ID extracted from ID: " + schedule_id);
 
-        setContentView(R.layout.activity_schedule_view);
     }
 }

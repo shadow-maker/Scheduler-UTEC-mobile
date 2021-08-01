@@ -16,4 +16,5 @@
     <string name="profile_view_create_schedule_txt">Crear</string>
     <string name="profile_view_edit_profile_txt">Editar Perfil</string>
     <string name="profile_view_delete_account_txt">Eliminar Cuenta</string>
+    <string name="generic_connection_error">Hubo un problema inseperado conectandose con el servidor</string>
 </resources>
