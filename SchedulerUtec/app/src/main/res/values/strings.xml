@@ -1,7 +1,18 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Scheduler Utec</string>
     <string name="main_menu_login_txt">Login</string>
     <string name="main_menu_register_txt">Register</string>
     <string name="main_menu_explore_txt">Explore</string>
     <string name="main_menu_welcome_txt">Welcome to schedulerUTEC</string>
+    <string name="profile_view_schedule_txt">Schedules</string>
+    <string name="profile_view_favorites_txt">Favorites</string>
+    <string name="generic_schedule_text_view">Schedule: <xliff:g id="title">%s</xliff:g> (#<xliff:g id="id">%s</xliff:g> )</string>
+    <string name="profile_view_schedule_text_view_empty">This student currently has no schedules</string>
+    <string name="profile_view_favorite_text_view_empty">This student currently has no favorites.</string>
+    <string name="profile_view_profile_text_view">Profile of <xliff:g id="first_name">%s</xliff:g> <xliff:g id="last_name">%s</xliff:g></string>
+    <string name="profile_view_new_schedule_txt">New Schedule</string>
+    <string name="profile_view_owner_options_txt">Owner Options</string>
+    <string name="profile_view_create_schedule_txt">Create</string>
+    <string name="profile_view_edit_profile_txt">Edit Profile</string>
+    <string name="profile_view_delete_account_txt">Delete Account</string>
 </resources>
