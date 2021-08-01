@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scheduler Utec</string>
+    <string name="main_menu_login_txt">Loggeate</string>
+    <string name="main_menu_register_txt">Crea tu cuenta</string>
+    <string name="main_menu_explore_txt">Explorar</string>
+    <string name="main_menu_welcome_txt">Bienvenido a schedulerUTEC</string>
+</resources>

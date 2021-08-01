@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Scheduler Utec</string>
+    <string name="main_menu_login_txt">Login</string>
+    <string name="main_menu_register_txt">Register</string>
+    <string name="main_menu_explore_txt">Explore</string>
+    <string name="main_menu_welcome_txt">Welcome to schedulerUTEC</string>
 </resources>
