@@ -94,6 +94,7 @@
                         android:layout_centerInParent="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="onClickEditProfileButton"
                         android:text="@string/profile_view_edit_profile_txt"/>
                 </RelativeLayout>
 
@@ -104,6 +105,7 @@
                         android:layout_centerInParent="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="onClickDeleteProfileButton"
                         android:text="@string/profile_view_delete_account_txt"/>
                 </RelativeLayout>
 
