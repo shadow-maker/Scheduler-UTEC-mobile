@@ -148,7 +148,7 @@ public class ProfileViewActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Owner options:
+        // --------------------- OWNER OPTIONS ---------------------
         Log.v(this.getClass().getName(), "Validating ownership");
         LinearLayout extraLayout = findViewById(R.id.profile_extra_layout);
         if (isOwner){
