@@ -46,5 +46,8 @@
     <string name="schedule_view_delete_schedule_txt">Horario Eliminado Exitosamente</string>
     <string name="schedule_view_add_favorite_txt">Horario agregado a favoritos</string>
     <string name="schedule_view_delete_favorite_txt">Horario eliminado de favoritos</string>
+    <string name="schedule_edit_clas_txt"><xliff:g id="section">%s</xliff:g>.<xliff:g id="number">%s</xliff:g> por <xliff:g id="profesor_first_name">%s</xliff:g> <xliff:g id="profesor_last_name">%s</xliff:g></string>
+    <string name="generic_add_txt">Agregar</string>
+    <string name="generic_delete_txt">Quitar</string>
 
 </resources>

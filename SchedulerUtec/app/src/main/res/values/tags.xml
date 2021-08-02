@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="TAG_SCHEDULE_ID" type="id"/>
+    <item name="TAG_CLAS_ID" type="id"/>
+    <item name="TAG_CLAS_SUBSCRIBED" type="id"/>
 </resources>

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,6 +78,98 @@ public class ScheduleEditActivity extends AppCompatActivity {
         } catch (JSONException e) {
             Log.e(this.getClass().getName(), "Invalid API Response (No schedule matrix found)");
             e.printStackTrace();
+        }
+
+        // --------------------------- LOAD COURSES -------------------------
+        JSONObject coursesData;
+        try {
+            coursesData = RequestHandeler.readCourseListByScheduleIdRequest(scheduleId);
+            loadCourses(coursesData);
+        } catch (JSONException e) {
+            Log.e(this.getClass().getName(), "Invalid API Response (No courses found)");
+            e.printStackTrace();
+        }
+    }
+    
+    
+    public void onClickEditClasToSchedule(View view) {
+        Button button_view = (Button) view;
+        String clas_id = button_view.getTag(R.id.TAG_CLAS_ID).toString();
+        String clas_subscribed = button_view.getTag(R.id.TAG_CLAS_SUBSCRIBED).toString();
+        if (Boolean.parseBoolean(clas_subscribed)) {
+            if (RequestHandeler.deleteClasFromScheduleByIdRequest(scheduleId,clas_id)){
+                button_view.setTag(R.id.TAG_CLAS_SUBSCRIBED, false);
+                button_view.setText(R.string.generic_add_txt);
+                Log.v(this.getClass().getName(), "Class deleted from schedule");
+            }
+            else{
+                Log.e(this.getClass().getName(), "Could not delete class from schedule");
+            }
+        }else{
+            if (RequestHandeler.addClasToScheduleByIdRequest(scheduleId,clas_id)){
+                button_view.setTag(R.id.TAG_CLAS_SUBSCRIBED, true);
+                button_view.setText(R.string.generic_delete_txt);
+                Log.v(this.getClass().getName(), "Class added to schedule");
+            }
+            else{
+                Log.e(this.getClass().getName(), "Could not add class to schedule");
+            }
+        }
+    }
+
+    private void loadClasesList(JSONArray clas_list, String section, LinearLayout lin_layout) throws JSONException{
+        for (int k = 0; k<clas_list.length(); k++){
+            JSONObject clas = clas_list.getJSONObject(k);
+            String clas_id = clas.getString("id");
+            String clas_number = clas.getString("numero");
+            String clas_profesor_first_name = clas.getString("docente_nombre");
+            String clas_profesor_last_name = clas.getString("docente_apellido");
+            Boolean clas_subscribed = clas.getBoolean("inscrito");
+
+            TextView clasView = new TextView(this);
+            clasView.setText(getString(R.string.schedule_edit_clas_txt, section, clas_number, clas_profesor_first_name, clas_profesor_last_name));
+            Button clasEdit = new Button(this);
+            clasEdit.setTag(R.id.TAG_CLAS_ID, clas_id) ;
+            clasEdit.setTag(R.id.TAG_CLAS_SUBSCRIBED, clas_subscribed) ;
+            if (clas_subscribed){
+                clasEdit.setText(getString(R.string.generic_delete_txt));                
+            }
+            else {
+                clasEdit.setText(getString(R.string.generic_add_txt));
+            }
+            clasEdit.setOnClickListener(this::onClickEditClasToSchedule);
+            lin_layout.addView(clasView);
+            lin_layout.addView(clasEdit);
+        }
+    }
+
+    private void loadCourses(JSONObject coursesData) throws JSONException {
+        JSONArray course_list= coursesData.getJSONArray("cursos");
+        LinearLayout linear_layout = findViewById(R.id.schedule_edit_courses_layout);
+        for (int i = 0; i<course_list.length(); i++) {
+            JSONObject course = course_list.getJSONObject(i);
+            String course_code =  course.getString("codigo");
+
+            TextView course_view = new TextView(this);
+            course_view.setText(course_code);
+            linear_layout.addView(course_view);
+
+            JSONArray section_list = course.getJSONArray("secciones");
+            for (int j = 0; j<section_list.length(); j++){
+                JSONObject section = section_list.getJSONObject(j);
+                String section_number = section.getString("seccion");
+
+                TextView section_view = new TextView(this);
+                section_view.setText(section_number);
+                linear_layout.addView(section_view);
+
+                JSONArray labs_list = section.getJSONArray("labs");
+                loadClasesList(labs_list, section_number, linear_layout);
+                JSONArray theory_list = section.getJSONArray("labs");
+                loadClasesList(theory_list, section_number, linear_layout);
+                JSONArray virtual_theory_list = section.getJSONArray("labs");
+                loadClasesList(virtual_theory_list, section_number, linear_layout);
+            }
         }
     }
 
