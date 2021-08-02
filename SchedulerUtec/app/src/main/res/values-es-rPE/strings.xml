@@ -19,4 +19,8 @@
     <string name="generic_connection_error">Hubo un problema inseperado conectandose con el servidor</string>
     <string name="schedule_view_student_txt">Creado por: <xliff:g id="first_name">%s</xliff:g> <xliff:g id="last_name">%s</xliff:g></string>
     <string name="schedule_view_name_txt">Nombre del horario: <xliff:g id="name">%s</xliff:g></string>
+    <string name="main_menu_login_hint_txt">Ingrese su ID UTEC</string>
+    <string name="main_menu_create_account_txt">Crear una cuenta</string>
+    <string name="main_menu_login_password_txt">Ingrese su contraseña</string>
+
 </resources>
