@@ -40,5 +40,7 @@
     <string name="time_txt">Hora</string>
     <string name="main_menu_logout_txt">Cerrar Sesion</string>
     <string name="generic_successful_logout">Se cerro sesion exitosamente</string>
+    <string name="generic_invalid_response">Peticion fue rechazada. Intente denuevo.</string>
+    <string name="schedule_edit_title_update_success_txt">El titulo se actualizo exitosamente</string>
 
 </resources>
