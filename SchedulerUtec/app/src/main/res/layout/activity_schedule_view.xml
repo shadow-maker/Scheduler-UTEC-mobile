@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScheduleViewActivity">
+    tools:context=".ScheduleViewActivity"
+    >
 
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -35,10 +36,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TableLayout
-                android:layout_width="match_parent"
+                android:id="@+id/schedule_view_table_layout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:stretchColumns="0,1,2,3,4,5,6,7">
                 <TableRow
+                    android:id="@+id/header"
                     android:layout_height="30dp"
                     android:background="@color/blue_schd">
                     <TextView
@@ -253,6 +256,20 @@
                     android:background="@color/dark_schd">
                     <TextView
                         android:text="20:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="21:00"
                         style="@style/ScheduleTableCell" />
                     <TextView style="@style/ScheduleTableCell" />
                     <TextView style="@style/ScheduleTableCell" />

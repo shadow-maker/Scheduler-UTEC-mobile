@@ -17,4 +17,6 @@
     <string name="profile_view_edit_profile_txt">Editar Perfil</string>
     <string name="profile_view_delete_account_txt">Eliminar Cuenta</string>
     <string name="generic_connection_error">Hubo un problema inseperado conectandose con el servidor</string>
+    <string name="schedule_view_student_txt">Creado por: <xliff:g id="first_name">%s</xliff:g> <xliff:g id="last_name">%s</xliff:g></string>
+    <string name="schedule_view_name_txt">Nombre del horario: <xliff:g id="name">%s</xliff:g></string>
 </resources>
