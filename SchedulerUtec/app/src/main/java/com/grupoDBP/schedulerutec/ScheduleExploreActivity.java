@@ -30,9 +30,9 @@ public class ScheduleExploreActivity extends AppCompatActivity {
 
     public void init() {
         elements = new ArrayList<>();
-        elements.add(new ScheduleElement("Horario 1", "Persona 1", "2021-08-01"));
-        elements.add(new ScheduleElement("Horario 2", "Persona 2", "2021-08-02"));
-        elements.add(new ScheduleElement("Horario 3", "Persona 3", "2021-08-03"));
+        elements.add(new ScheduleElement(1, "Horario 1", "Persona 1", "2021-08-01"));
+        elements.add(new ScheduleElement(2, "Horario 2", "Persona 2", "2021-08-02"));
+        elements.add(new ScheduleElement(3, "Horario 3", "Persona 3", "2021-08-03"));
 
         ListAdapter listAdapter = new ListAdapter(elements, this);
         RecyclerView recyclerView = findViewById(R.id.scheduleList);

@@ -14,10 +14,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private LayoutInflater inflater;
     private Context context;
 
-    public ListAdapter(List<ScheduleElement> item, Context context) {
+    public ListAdapter(List<ScheduleElement> list, Context context) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
-        this.data = item;
+        this.data = list;
     }
 
     @Override
