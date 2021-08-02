@@ -84,7 +84,7 @@
 
             <Button
                 android:text="@string/main_menu_create_account_txt"
-                android:onClick="crearcuenta"
+                android:onClick="onClickCreateAccount"
                 style="@style/main_menu_button"
                 />
         </RelativeLayout>

@@ -60,4 +60,20 @@ public class RequestHandeler {
         // Process response into JSON object
         return new JSONObject(APIresponse);
     }
+
+    public static boolean updateScheduleTitleRequest(String schedule_title) throws JSONException {
+        // Sample API JSON response
+        String APIresponse = "{\"success\":\"true\"}";
+
+        JSONObject jsonData = new JSONObject(APIresponse);
+        // Process response
+        if (jsonData.getBoolean("success")){
+            Log.v("RequestHandeler", "Title update succesful");
+            return true;
+        }
+        else {
+            Log.v("RequestHandeler","Title update failed");
+            return false;
+        }
+    }
 }

@@ -38,5 +38,7 @@
     <string name="sunday_txt">Domingo</string>
     <string name="classes_txt">Cursos</string>
     <string name="time_txt">Hora</string>
+    <string name="main_menu_logout_txt">Cerrar Sesion</string>
+    <string name="generic_successful_logout">Se cerro sesion exitosamente</string>
 
 </resources>

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TableLayout;
 
 import org.json.JSONArray;
@@ -61,5 +62,23 @@ public class ScheduleEditActivity extends AppCompatActivity {
 
     public void onClickReturn(View view) {
         finish();
+    }
+
+    public void onClickUpdateTitleSubmit(View view){
+        /*
+        // Retrieve data
+        EditText titleInput = findViewById(R.id.rename_edit);
+        String schedule_title = titleInput.getText().toString();
+
+        // Submit Request through API
+        JSONObject newScheduleJSON;
+        try {
+            newScheduleJSON = RequestHandeler.createScheduleRequest(schedule_title);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.w(this.getClass().getName(),"Invalid API response when creating new schedule");
+            return;
+        }
+        */
     }
 }

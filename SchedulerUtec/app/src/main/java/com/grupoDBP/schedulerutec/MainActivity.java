@@ -7,21 +7,25 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     public void updateButtons() {
         View sectionProfile = findViewById(R.id.main_menu_profile_section);
         View sectionLogin = findViewById(R.id.main_menu_login_section);
+        View sectionLogout = findViewById(R.id.main_menu_logout_section);
         Log.v(this.getClass().getName(),"User is logged in?"+SessionData.loggedIn);
         if (SessionData.loggedIn){
             Log.v(this.getClass().getName(), "Loading menu for logged in user");
             sectionProfile.setVisibility(View.VISIBLE);
+            sectionLogout.setVisibility(View.VISIBLE);
             sectionLogin.setVisibility(View.GONE);
         }
         else {
             Log.v(this.getClass().getName(), "Loading menu for unauthenticated user");
             sectionProfile.setVisibility(View.GONE);
+            sectionLogout.setVisibility(View.GONE);
             sectionLogin.setVisibility(View.VISIBLE);
         }
     }
@@ -49,5 +53,15 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         updateButtons();
+    }
+
+    public void onClickLogout(View view) {
+        Log.v(this.getClass().getName(), "Logginout");
+        SessionData.loggedIn = false;
+        SessionData.userId = null;
+        Log.v(this.getClass().getName(), "Credentials deleted");
+        updateButtons();
+        Toast.makeText(this, getString(R.string.generic_successful_logout), Toast.LENGTH_SHORT).show();
+        Log.v(this.getClass().getName(), "Buttons updated and sending toast");
     }
 }

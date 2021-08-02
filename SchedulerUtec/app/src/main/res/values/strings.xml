@@ -37,5 +37,7 @@
     <string name="sunday_txt">Sunday</string>
     <string name="classes_txt">Classes</string>
     <string name="time_txt">Time</string>
+    <string name="main_menu_logout_txt">Logout</string>
+    <string name="generic_successful_logout">Successfully Logged Out</string>
 
 </resources>

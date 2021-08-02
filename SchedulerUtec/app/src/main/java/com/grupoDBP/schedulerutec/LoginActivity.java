@@ -47,10 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
-    public void crearcuenta(View view) {
-        Intent crearcuenta = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getRegisterUrl()));
-        startActivity(crearcuenta);
-
+    public void onClickCreateAccount(View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getRegisterUrl()));
+        startActivity(i);
     }
 }
