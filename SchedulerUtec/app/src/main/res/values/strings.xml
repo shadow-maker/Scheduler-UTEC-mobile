@@ -47,5 +47,8 @@
     <string name="schedule_view_delete_schedule_txt">Successfully Deleted Schedule</string>
     <string name="schedule_view_add_favorite_txt">Schedule added to favorites</string>
     <string name="schedule_view_delete_favorite_txt">Schedule deleted from favorites</string>
+    <string name="schedule_edit_clas_txt"><xliff:g id="section">%s</xliff:g>.<xliff:g id="number">%s</xliff:g> by <xliff:g id="profesor_first_name">%s</xliff:g> <xliff:g id="profesor_last_name">%s</xliff:g></string>
+    <string name="generic_add_txt">Add</string>
+    <string name="generic_delete_txt">Delete</string>
 
 </resources>

@@ -88,4 +88,18 @@ public class RequestHandeler {
     public static boolean deleteScheduleByIdRequest(String schedule_id) {
         return true;
     }
+
+    public static JSONObject readCourseListByScheduleIdRequest(String schedule_id) throws JSONException {
+        // Sample API JSON response
+        String APIresponse ="{\"cursos\":[{\"codigo\":\"CSB01\",\"secciones\":[{\"seccion\":\"01\",\"labs\":[{\"id\":\"1\",\"numero\":\"01\",\"docente_nombre\":\"Marvin\",\"docente_apellido\":\"Abisrror Zarate\",\"inscrito\":\"true\"}],\"teorias\":[{\"id\":\"2\",\"numero\":\"00\",\"docente_nombre\":\"Marvin\",\"docente_apellido\":\"Abisrror Zarate\",\"inscrito\":\"true\"}],\"teorias_virtuales\":[]},{\"seccion\":\"02\",\"labs\":[{\"id\":\"3\",\"numero\":\"01\",\"docente_nombre\":\"Marvin\",\"docente_apellido\":\"Abisrror Zarate\",\"inscrito\":\"false\"}],\"teorias\":[{\"id\":\"4\",\"numero\":\"00\",\"docente_nombre\":\"Marvin\",\"docente_apellido\":\"Abisrror Zarate\",\"inscrito\":\"false\"}],\"teorias_virtuales\":[]}]}]}";
+        return new JSONObject(APIresponse);
+    }
+
+    public static boolean addClasToScheduleByIdRequest(String schedule_id, String clas_id) {
+        return true;
+    }
+
+    public static boolean deleteClasFromScheduleByIdRequest(String schedule_id, String clas_id) {
+        return true;
+    }
 }
