@@ -1,10 +1,18 @@
 package com.grupoDBP.schedulerutec;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.*;
 
@@ -31,5 +39,10 @@ public class ScheduleExploreActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(listAdapter);
+    }
+
+    // ------------ BUTTON CLICK LISTENERS -----------------------
+    public void onClickScheduleButty(View view){
+        // TODO
     }
 }
