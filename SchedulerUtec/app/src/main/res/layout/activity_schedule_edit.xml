@@ -17,7 +17,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Vista de Horario"/>
+                android:text="@string/schedule_view_edit_title_txt"
+                android:textSize="50sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
 
             <!-- NAME AND CREATOR -->
             <TextView
@@ -29,6 +32,36 @@
                 android:id="@+id/schedule_view_student"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:id="@+id/rename"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/rename_edit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/rename_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rename_txt"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit_txt"
+                    android:layout_marginLeft="120dp"/>
+
+            </RelativeLayout>
+
+
+
 
             <!-- TABLE -->
             <HorizontalScrollView
@@ -281,6 +314,11 @@
                 </TableLayout>
             </HorizontalScrollView>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/return_schedule_view_txt"
+                android:onClick="onClickSchedule"/>
             <!-- STATUS -->
             <TextView
                 android:id="@+id/schedule_view_status"

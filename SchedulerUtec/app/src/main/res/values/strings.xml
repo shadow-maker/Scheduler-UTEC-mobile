@@ -21,4 +21,8 @@
     <string name="main_menu_login_hint_txt">Type in your UTEC ID</string>
     <string name="main_menu_create_account_txt">Create an account</string>
     <string name="main_menu_login_password_txt">Type in your password</string>
+    <string name="schedule_view_edit_title_txt">Alter schedule</string>
+    <string name="rename_txt">Rename</string>
+    <string name="submit_txt">Submit</string>
+    <string name="return_schedule_view_txt">Return to normal view</string>
 </resources>
