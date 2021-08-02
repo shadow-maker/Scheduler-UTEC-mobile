@@ -37,10 +37,9 @@
             android:layout_weight="1">
 
             <Button
-                android:text="@string/main_menu_login_txt"
                 style="@style/main_menu_button"
                 android:onClick="onClickLogin"
-                />
+                android:text="@string/main_menu_login_txt" />
         </RelativeLayout>
 
 
@@ -74,8 +73,9 @@
             android:layout_weight="1">
 
             <Button
-                android:text="@string/main_menu_explore_txt"
-                style="@style/main_menu_button" />
+                style="@style/main_menu_button"
+                android:onClick="onClickExplore"
+                android:text="@string/main_menu_explore_txt" />
         </RelativeLayout>
 
         <TextView

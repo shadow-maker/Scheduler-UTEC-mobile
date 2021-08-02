@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MainMenuTheme">
+        <activity android:name=".ScheduleExploreActivity"/>
+
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".ScheduleEditActivity"></activity>
         <activity android:name=".ScheduleViewActivity" />
