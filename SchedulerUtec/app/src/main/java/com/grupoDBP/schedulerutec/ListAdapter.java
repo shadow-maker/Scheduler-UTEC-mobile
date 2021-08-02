@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+import java.util.*;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
-    private List<ListElement> data;
+    private List<ScheduleElement> data;
     private LayoutInflater inflater;
     private Context context;
 
-    public ListAdapter(List<ListElement> item, Context context) {
+    public ListAdapter(List<ScheduleElement> item, Context context) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.data = item;
@@ -37,7 +37,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.bindData(data.get(position));
     }
 
-    public void setItems(List<ListElement> items) {
+    public void setItems(List<ScheduleElement> items) {
         data = items;
     }
 
@@ -51,7 +51,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             date = itemView.findViewById(R.id.date);
         }
 
-        void bindData(final ListElement item) {
+        void bindData(final ScheduleElement item) {
             title.setText(item.getTitle());
             createdBy.setText(item.getCreatedBy());
             date.setText(item.getDate());

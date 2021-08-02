@@ -9,19 +9,21 @@ import java.util.*;
 
 public class ScheduleExploreActivity extends AppCompatActivity {
 
-    List<ListElement> elements;
+    List<ScheduleElement> elements;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_explore);
+
+        init();
     }
 
     public void init() {
         elements = new ArrayList<>();
-        elements.add(new ListElement("Horario 1", "Persona 1", "2021-08-01"));
-        elements.add(new ListElement("Horario 2", "Persona 2", "2021-08-02"));
-        elements.add(new ListElement("Horario 3", "Persona 3", "2021-08-03"));
+        elements.add(new ScheduleElement("Horario 1", "Persona 1", "2021-08-01"));
+        elements.add(new ScheduleElement("Horario 2", "Persona 2", "2021-08-02"));
+        elements.add(new ScheduleElement("Horario 3", "Persona 3", "2021-08-03"));
     }
 
     ListAdapter listAdapter = new ListAdapter(elements, this);
