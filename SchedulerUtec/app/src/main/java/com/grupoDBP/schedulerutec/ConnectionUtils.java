@@ -1,7 +1,7 @@
 package com.grupoDBP.schedulerutec;
 
 public class ConnectionUtils {
-    private static  final String BASE_WEB_URL = "http://127.0.0.1:8888/";
+    private static  final String BASE_WEB_URL = "http://127.0.0.1:8888";
     private static final String BASE_API_URL = "http://127.0.0.1:8888/api";
 
     public static String getStudentReadURL(String alumno_id){
