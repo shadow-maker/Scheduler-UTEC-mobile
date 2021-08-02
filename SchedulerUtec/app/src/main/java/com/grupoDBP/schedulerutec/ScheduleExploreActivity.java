@@ -5,12 +5,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,6 +21,7 @@ import java.util.*;
 public class ScheduleExploreActivity extends AppCompatActivity {
 
     List<ScheduleElement> elements;
+    JSONObject jsonData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +33,45 @@ public class ScheduleExploreActivity extends AppCompatActivity {
 
     public void init() {
         elements = new ArrayList<>();
-        elements.add(new ScheduleElement(1, "Horario 1", "Persona 1", "2021-08-01"));
-        elements.add(new ScheduleElement(2, "Horario 2", "Persona 2", "2021-08-02"));
-        elements.add(new ScheduleElement(3, "Horario 3", "Persona 3", "2021-08-03"));
+
+        // LOAD JSON DATA
+        try {
+            // Process response into JSON object
+            jsonData = RequestHandeler.readScheduleAll();
+        }
+        catch (JSONException e) {
+            // Error Handeling
+            Log.e(this.getClass().getName(), "Invalid API Response (Can not parse to JSON)");
+            e.printStackTrace(); return;
+        }
+
+        // LOAD SCHEDULES
+
+        Log.v(this.getClass().getName(), "Loading list of schedules");
+        try {
+            // Load array
+            JSONArray schedule_array = jsonData.getJSONArray("horarios");
+            // Load data to layout
+            Log.v(this.getClass().getName(), "Starting Load of schedules.");
+
+            for (int i = 0; i < schedule_array.length(); i++){
+                // Get schedule data
+                JSONObject s = schedule_array.getJSONObject(i);
+                String schedule_id = s.getString("horario_id");
+                String schedule_title = s.getString("horario_titulo");
+                String schedule_student_first_name = s.getString("horario_alumno_nombre");
+                String schedule_student_last_name = s.getString("horario_alumno_apellido");
+                String schedule_student_name = schedule_student_first_name + schedule_student_last_name;
+
+                elements.add(new ScheduleElement(schedule_id, schedule_title,  schedule_student_name, "2021-08-01"));
+
+            }
+
+        } catch (JSONException e) {
+            // Error Handeling
+            Log.e(this.getClass().getName(), "Invalid API Response (No schedule array found)");
+            e.printStackTrace();
+        }
 
         ScheduleListAdapter listAdapter = new ScheduleListAdapter(elements, this);
         RecyclerView recyclerView = findViewById(R.id.scheduleList);
