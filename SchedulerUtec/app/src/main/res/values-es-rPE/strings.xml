@@ -26,5 +26,8 @@
     <string name="rename_txt">Renombrar</string>
     <string name="submit_txt">Submit</string>
     <string name="return_schedule_view_txt">Regresar a vista normal</string>
+    <string name="main_menu_profile_txt">Perfil</string>
+    <string name="generic_invalid_credentials">Credenciales invalidas</string>
+    <string name="generic_successful_login">Login Exitoso</string>
 
 </resources>

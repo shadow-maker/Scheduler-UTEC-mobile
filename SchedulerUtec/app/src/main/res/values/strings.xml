@@ -25,4 +25,8 @@
     <string name="rename_txt">Rename</string>
     <string name="submit_txt">Submit</string>
     <string name="return_schedule_view_txt">Return to normal view</string>
+    <string name="main_menu_profile_txt">Profile</string>
+    <string name="generic_invalid_credentials">Invalid Credentials</string>
+    <string name="generic_successful_login">Successful Login</string>
+
 </resources>

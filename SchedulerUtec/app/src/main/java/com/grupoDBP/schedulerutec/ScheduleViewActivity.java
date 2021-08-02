@@ -88,7 +88,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         Intent i = new Intent(this, ScheduleViewActivity.class);
         i.putExtra(ScheduleEditActivity.EXTRA_SCHEDULE_EDIT_ID, scheduleId);
         Log.v(this.getClass().getName(), "Starting Intent with Schedule ID: "+scheduleId);
-        startActivity(i);
+        startActivityForResult(i,0);
     }
 
 }
