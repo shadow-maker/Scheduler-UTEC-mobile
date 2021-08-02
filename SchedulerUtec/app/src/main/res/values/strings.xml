@@ -36,5 +36,6 @@
     <string name="saturday_txt">Saturday</string>
     <string name="sunday_txt">Sunday</string>
     <string name="classes_txt">Classes</string>
+    <string name="time_txt">Time</string>
 
 </resources>

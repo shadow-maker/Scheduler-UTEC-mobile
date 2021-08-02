@@ -77,28 +77,28 @@
                         android:layout_height="30dp"
                         android:background="@color/blue_schd">
                         <TextView
-                            android:text="Hora"
+                            android:text="@string/time_txt"
                             style="@style/ScheduleTableCell" />
                         <TextView
-                            android:text="Lunes"
+                            android:text="@string/monday_txt"
                             style="@style/ScheduleTableCell" />
                         <TextView
-                            android:text="Martes"
+                            android:text="@string/tuesday_txt"
                             style="@style/ScheduleTableCell" />
                         <TextView
-                            android:text="Miercoles"
+                            android:text="@string/wednesday_txt"
                             style="@style/ScheduleTableCell" />
                         <TextView
-                            android:text="Jueves"
+                            android:text="@string/thursday_txt"
                             style="@style/ScheduleTableCell" />
                         <TextView
-                            android:text="Viernes"
+                            android:text="@string/friday_txt"
                             style="@style/ScheduleTableCell" />
                         <TextView
-                            android:text="Sabado"
+                            android:text="@string/saturday_txt"
                             style="@style/ScheduleTableCell" />
                         <TextView
-                            android:text="Domingo"
+                            android:text="@string/sunday_txt"
                             style="@style/ScheduleTableCell" />
                     </TableRow>
                     <TableRow
@@ -329,7 +329,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cursos"/>
+                android:text="@string/classes_txt"/>
 
             <LinearLayout
                 android:id="@+id/schedule_edit_courses_layout"

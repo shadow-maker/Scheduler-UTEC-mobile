@@ -37,4 +37,6 @@
     <string name="saturday_txt">Sábado</string>
     <string name="sunday_txt">Domingo</string>
     <string name="classes_txt">Cursos</string>
+    <string name="time_txt">Hora</string>
+
 </resources>
