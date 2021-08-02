@@ -60,6 +60,6 @@ public class ScheduleEditActivity extends AppCompatActivity {
     }
 
     public void onClickReturn(View view) {
-        //finish();
+        finish();
     }
 }
