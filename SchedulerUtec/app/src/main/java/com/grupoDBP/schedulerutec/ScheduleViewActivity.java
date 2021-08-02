@@ -33,7 +33,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_view);
 
-        // ------------ INTENT PROCESSING
+        // ----------------- INTENT PROCESSING -----------------
         Intent i = getIntent();
         scheduleId = i.getStringExtra(EXTRA_SCHEDULE_ID);
         Log.v(this.getClass().getName(), "Schedule ID extracted from ID: " + scheduleId);
@@ -53,7 +53,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         }
 
 
-        // ----------------- LOAD TABLE ----------------------
+        // ---------------------------- LOAD TABLE ---------------------------
         TableLayout tb = findViewById(R.id.schedule_view_table_layout);
         try {
             JSONArray schedule_matrix = jsonData.getJSONArray("horario_tabla");
@@ -63,7 +63,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // ----------------- NAME AND CREATOR -------------------
+        // --------------------------- NAME AND CREATOR -------------------
         try {
             // Get views
             TextView studentTextView = findViewById(R.id.schedule_view_student);
@@ -80,8 +80,6 @@ public class ScheduleViewActivity extends AppCompatActivity {
             Log.e(this.getClass().getName(), "Invalid API Response (No student/title data found)");
             e.printStackTrace();
         }
-
-
     }
 
     // FUNCTION: Schedule Link
