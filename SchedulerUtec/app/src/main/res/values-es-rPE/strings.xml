@@ -22,5 +22,5 @@
     <string name="main_menu_login_hint_txt">Ingrese su ID UTEC</string>
     <string name="main_menu_create_account_txt">Crear una cuenta</string>
     <string name="main_menu_login_password_txt">Ingrese su contraseña</string>
-
+    <string name="schedule_explore_title_txt">Explorar Horarios</string>
 </resources>

@@ -27,4 +27,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void onClickExplore(View view){
+        Log.v(this.getClass().getName(), "Changing to Login Activity");
+        Intent i = new Intent(this, ScheduleExploreActivity.class);
+        startActivity(i);
+    }
+
 }
