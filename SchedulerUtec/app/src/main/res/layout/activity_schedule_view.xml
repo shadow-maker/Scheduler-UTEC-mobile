@@ -322,7 +322,8 @@
                     android:text="Editar Horario"
                     android:layout_alignParentStart="true"
                     android:padding="5dp"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="10dp"
+                    android:onClick="onClickScheduleEditButton"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

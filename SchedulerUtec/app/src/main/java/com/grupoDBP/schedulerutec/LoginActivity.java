@@ -2,7 +2,10 @@ package com.grupoDBP.schedulerutec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 public class LoginActivity extends AppCompatActivity {
 

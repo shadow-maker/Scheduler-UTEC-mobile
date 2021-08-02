@@ -20,4 +20,11 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, ProfileViewActivity.class);
         startActivity(i);
     }
+
+    public void onClickLogin(View view){
+        Log.v(this.getClass().getName(), "Changing to Login Activity");
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+    }
+
 }

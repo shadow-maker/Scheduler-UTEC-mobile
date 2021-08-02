@@ -28,40 +28,6 @@ public class ScheduleViewActivity extends AppCompatActivity {
     // Schedule ID
     String scheduleId;
 
-    /*
-    private ArrayList<ArrayList<View>> getMatrixFromTable(View v){
-        ViewGroup vg = (ViewGroup) v;
-        Log.v(this.getClass().getName(), "#N row in table " + vg.getChildCount()+ ". Now loading data ...");
-
-        ArrayList<ArrayList<View>> table_matrix = new ArrayList<ArrayList<View>>();
-        for (int i = 0; i <vg.getChildCount(); i++){
-            ViewGroup row = (ViewGroup) vg.getChildAt(i);
-            ArrayList<View> temp_array = new ArrayList<View>();
-            for (int j = 0; j<row.getChildCount(); j++){
-                View cell = row.getChildAt(j);
-                temp_array.add(cell);
-            }
-            table_matrix.add(temp_array);
-        }
-        Log.v(this.getClass().getName(), "Succesfully loaded matrix from table");
-        return table_matrix;
-    }
-
-    private void loadScheduleTable(JSONArray schedule_matrix, TableLayout tb) throws JSONException {
-        ArrayList<ArrayList<View>> table_matrix = getMatrixFromTable(tb);
-
-        for (int i = 0; i < schedule_matrix.length(); i++){
-            JSONArray schedule_row = schedule_matrix.getJSONArray(i);
-            for (int j = 0; j<schedule_row.length(); j++){
-                String cell_text = schedule_row.getString(j);
-                //String cell_text = c.toString();
-                TextView cell = (TextView) table_matrix.get(i+1).get(j+1);
-                cell.setText(cell_text);
-            }
-        }
-    }
-    */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,4 +83,14 @@ public class ScheduleViewActivity extends AppCompatActivity {
 
 
     }
+
+    // FUNCTION: Schedule Link
+    public void onClickScheduleEditButton(View view){
+        Log.v(this.getClass().getName(), "Changing to Schedule Edit Activity");
+        Intent i = new Intent(this, ScheduleViewActivity.class);
+        i.putExtra(ScheduleEditActivity.EXTRA_SCHEDULE_EDIT_ID, scheduleId);
+        Log.v(this.getClass().getName(), "Starting Intent with Schedule ID: "+scheduleId);
+        startActivity(i);
+    }
+
 }
