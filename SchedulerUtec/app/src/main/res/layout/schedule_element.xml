@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Horario 1"
+            android:text="Horario"
             android:textColor="@color/light_blue"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -64,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toBottomOf="@+id/idLayout">
+            app:layout_constraintTop_toBottomOf="@+id/idLayout">
 
             <TextView
                 android:id="@+id/nameLabel"
@@ -81,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Creado por: ..."
+                android:text="name"
                 android:textColor="@color/light_schd"
                 android:textSize="18sp"
                 android:textStyle="normal"
