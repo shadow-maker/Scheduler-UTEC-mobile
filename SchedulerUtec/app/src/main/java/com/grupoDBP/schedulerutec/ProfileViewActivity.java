@@ -86,13 +86,10 @@ public class ProfileViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_view);
 
         // ------------------ API RESPONSE ---------------
-        // Sample API JSON response
-        String APIresponse = "{\"alumno_nombre\": \"Rodrigo Gabriel\", \"alumno_apellido\":\"Salazar Alva\",\"horarios\": [{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":1,\"horario_titulo\":\"Verano 2020-Opcion1\",\"horario_url\":\"/horarios/1\"}], \"favoritos\":[]}";
-
         // Process API Response
         try {
             // Process response into JSON object
-            jsonData = new JSONObject(APIresponse);
+            jsonData = RequestHandeler.readProfileByIdRequest(SessionData.userId);
         }
         catch (JSONException e) {
             // Error Handeling

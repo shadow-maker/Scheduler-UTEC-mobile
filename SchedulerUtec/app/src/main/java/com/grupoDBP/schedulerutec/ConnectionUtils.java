@@ -1,10 +1,19 @@
 package com.grupoDBP.schedulerutec;
 
 public class ConnectionUtils {
+    private static  final String BASE_WEB_URL = "http://127.0.0.1:8888/";
     private static final String BASE_API_URL = "http://127.0.0.1:8888/api";
 
-    public static String getStudentReadURL(String horario_id){
-        return BASE_API_URL+"/alumnos/"+horario_id;
+    public static String getCRegisterUrl(){
+        return BASE_WEB_URL + "/auth/register";
+    }
+
+    public static String getLoginUrl(){
+        return BASE_WEB_URL + "/auth/login";
+    }
+
+    public static String getStudentReadURL(String alumno_id){
+        return BASE_API_URL+"/alumnos/"+alumno_id;
     }
 
     public static String getScheduleReadURL(String horario_id){

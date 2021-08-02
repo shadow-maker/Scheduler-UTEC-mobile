@@ -22,4 +22,21 @@
     <string name="main_menu_create_account_txt">Create an account</string>
     <string name="main_menu_login_password_txt">Type in your password</string>
     <string name="schedule_explore_title_txt">Explore Schedules</string>
+    <string name="schedule_view_edit_title_txt">Alter schedule</string>
+    <string name="rename_txt">Rename</string>
+    <string name="submit_txt">Submit</string>
+    <string name="return_schedule_view_txt">Return to normal view</string>
+    <string name="main_menu_profile_txt">Profile</string>
+    <string name="generic_invalid_credentials">Invalid Credentials</string>
+    <string name="generic_successful_login">Successful Login</string>
+    <string name="monday_txt">Monday</string>
+    <string name="tuesday_txt">Tuesday</string>
+    <string name="wednesday_txt">Wednesday</string>
+    <string name="thursday_txt">Thursday</string>
+    <string name="friday_txt">Friday</string>
+    <string name="saturday_txt">Saturday</string>
+    <string name="sunday_txt">Sunday</string>
+    <string name="classes_txt">Classes</string>
+    <string name="time_txt">Time</string>
+
 </resources>

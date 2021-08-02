@@ -33,18 +33,16 @@ public class ScheduleViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_view);
 
-        // ------------ INTENT PROCESSING
+        // ----------------- INTENT PROCESSING -----------------
         Intent i = getIntent();
         scheduleId = i.getStringExtra(EXTRA_SCHEDULE_ID);
         Log.v(this.getClass().getName(), "Schedule ID extracted from ID: " + scheduleId);
 
         // ------------------ API RESPONSE ---------------
-        // Sample API JSON response
-        String APIresponse = "{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":1,\"horario_titulo\":\"Verano 2020-Opcion1\",\"horario_tabla\":[[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"EG0006\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"EG0006\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"EG0006\",\"\",\"\",\"\"],[\"\",\"\",\"EG0006\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"EG0006\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"CS2B01\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"CS2701\",\"\",\"CS2701\",\"\",\"CS2701\",\"\",\"\"],[\"CS2701\",\"\",\"CS2701\",\"\",\"CS2701\",\"\",\"\"]]}";
         // Process API Response
         try {
             // Process response into JSON object
-            jsonData = new JSONObject(APIresponse);
+            jsonData = RequestHandeler.readScheduleByIdRequest(scheduleId);
         }
         catch (JSONException e) {
             // Error Handeling
@@ -53,7 +51,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         }
 
 
-        // ----------------- LOAD TABLE ----------------------
+        // ---------------------------- LOAD TABLE ---------------------------
         TableLayout tb = findViewById(R.id.schedule_view_table_layout);
         try {
             JSONArray schedule_matrix = jsonData.getJSONArray("horario_tabla");
@@ -63,7 +61,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // ----------------- NAME AND CREATOR -------------------
+        // --------------------------- NAME AND CREATOR -------------------
         try {
             // Get views
             TextView studentTextView = findViewById(R.id.schedule_view_student);
@@ -80,8 +78,6 @@ public class ScheduleViewActivity extends AppCompatActivity {
             Log.e(this.getClass().getName(), "Invalid API Response (No student/title data found)");
             e.printStackTrace();
         }
-
-
     }
 
     // FUNCTION: Schedule Link
@@ -90,7 +86,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         Intent i = new Intent(this, ScheduleViewActivity.class);
         i.putExtra(ScheduleEditActivity.EXTRA_SCHEDULE_EDIT_ID, scheduleId);
         Log.v(this.getClass().getName(), "Starting Intent with Schedule ID: "+scheduleId);
-        startActivity(i);
+        startActivityForResult(i,0);
     }
 
 }
