@@ -22,6 +22,7 @@
     <string name="main_menu_create_account_txt">Create an account</string>
     <string name="main_menu_login_password_txt">Type in your password</string>
     <string name="schedule_explore_title_txt">Explore Schedules</string>
+    <string name="schedule_explore_element_button_txt">View</string>
     <string name="schedule_view_edit_title_txt">Alter schedule</string>
     <string name="rename_txt">Rename</string>
     <string name="submit_txt">Submit</string>
