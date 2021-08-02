@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d74c5b89-bc0b-451b-8b16-7dbd1facaaac" name="Default Changelist" comment="" />
+    <list default="true" id="d74c5b89-bc0b-451b-8b16-7dbd1facaaac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchedulerUtec/app/src/main/java/com/grupoDBP/schedulerutec/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SchedulerUtec/app/src/main/java/com/grupoDBP/schedulerutec/LoginActivity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,10 +45,11 @@
       <screen x="1920" y="9" width="1920" height="1040" />
     </state>
     <state x="2080" y="268" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.9.1920.1040@1920.9.1920.1040" timestamp="1627801366032" />
-    <state x="1133" y="275" key="FileChooserDialogImpl" timestamp="1627889137370">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1133" y="286" key="FileChooserDialogImpl" timestamp="1627890228477">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1133" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1627889137370" />
     <state x="3053" y="284" key="FileChooserDialogImpl/0.0.1920.1040/1920.9.1920.1040@1920.9.1920.1040" timestamp="1627835148679" />
+    <state x="1133" y="286" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1627890228477" />
   </component>
 </project>
