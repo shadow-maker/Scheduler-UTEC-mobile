@@ -45,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(i,0);
     }
 
+    public void onClickExplore(View view) {
+        Log.v(this.getClass().getName(), "Changing to Schedule Explore Activity");
+        Intent i = new Intent(this, ScheduleExploreActivity.class);
+        startActivity(i);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         updateButtons();
-        Intent i = new Intent(this, ScheduleExploreActivity.class);
-        startActivity(i);
     }
 }
