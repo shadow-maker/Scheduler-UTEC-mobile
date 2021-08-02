@@ -84,4 +84,8 @@ public class RequestHandeler {
     public static boolean updateAddFavoriteByIdResquest(String schedule_id) {
         return true;
     }
+
+    public static boolean deleteScheduleByIdRequest(String schedule_id) {
+        return true;
+    }
 }

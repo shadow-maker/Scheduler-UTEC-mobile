@@ -364,7 +364,8 @@
                     android:text="Eliminar Horario"
                     android:layout_alignParentEnd="true"
                     android:padding="5dp"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="10dp"
+                    android:onClick="onClickScheduleDelete"/>
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

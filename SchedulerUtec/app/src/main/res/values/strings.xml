@@ -42,5 +42,8 @@
     <string name="generic_invalid_response">Request was rejected. Try again.</string>
     <string name="schedule_edit_title_update_success_txt">Title successfully updated</string>
     <string name="schedule_view_title_txt">View Schedule</string>
+    <string name="schedule_view_delete_schedule_txt">Successfully Deleted Schedule</string>
+    <string name="schedule_view_add_favorite_txt">Schedule added to favorites</string>
+    <string name="schedule_view_delete_favorite_txt">Schedule deleted from favorites</string>
 
 </resources>

@@ -43,5 +43,8 @@
     <string name="generic_invalid_response">Peticion fue rechazada. Intente denuevo.</string>
     <string name="schedule_edit_title_update_success_txt">El titulo se actualizo exitosamente</string>
     <string name="schedule_view_title_txt">Vista de Horario</string>
+    <string name="schedule_view_delete_schedule_txt">Horario Eliminado Exitosamente</string>
+    <string name="schedule_view_add_favorite_txt">Horario agregado a favoritos</string>
+    <string name="schedule_view_delete_favorite_txt">Horario eliminado de favoritos</string>
 
 </resources>

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,7 +103,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
             try {
                 isFavorite = jsonData.getBoolean("favorite");
             } catch (JSONException e) {
-                Log.w(this.getClass().getName(), "Favorite JSON element not foun. Setting false by default");
+                Log.w(this.getClass().getName(), "Favorite JSON element not d. Setting false by default");
                 isFavorite = false;
             }
 
@@ -149,6 +150,8 @@ public class ScheduleViewActivity extends AppCompatActivity {
     public void onClickScheduleFavoriteDelete(View view){
         if (RequestHandeler.updateDeleteFavoriteByIdResquest(scheduleId)) {
             isFavorite = false;
+            Toast.makeText(this, R.string.schedule_view_delete_favorite_txt, Toast.LENGTH_LONG).show();
+            Log.e(this.getClass().getName(), "Added schedule with ID: "+scheduleId+ " to favorites");
         }
         updateLoggedInButons();
     }
@@ -157,8 +160,22 @@ public class ScheduleViewActivity extends AppCompatActivity {
     public void onClickScheduleFavoriteAdd(View view){
         if (RequestHandeler.updateAddFavoriteByIdResquest(scheduleId)) {
             isFavorite = true;
+            Toast.makeText(this, R.string.schedule_view_add_favorite_txt, Toast.LENGTH_SHORT).show();
+            Log.e(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId+ " from favorites");
         }
         updateLoggedInButons();
     }
 
+    // Function: On click delete schedule
+    public void onClickScheduleDelete(View view){
+        if (RequestHandeler.deleteScheduleByIdRequest(scheduleId)){
+            Toast.makeText(this, R.string.schedule_view_delete_schedule_txt, Toast.LENGTH_SHORT).show();
+            Log.e(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId);
+            finish();
+        }
+        else {
+            Toast.makeText(this, R.string.generic_invalid_response, Toast.LENGTH_LONG).show();
+            Log.e(this.getClass().getName(), "Could not delete schedule with ID: "+scheduleId);
+        }
+    }
 }
