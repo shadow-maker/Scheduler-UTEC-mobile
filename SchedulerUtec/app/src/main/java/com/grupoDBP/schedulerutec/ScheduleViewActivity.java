@@ -28,6 +28,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
     // Schedule ID
     String scheduleId;
 
+    /*
     private ArrayList<ArrayList<View>> getMatrixFromTable(View v){
         ViewGroup vg = (ViewGroup) v;
         Log.v(this.getClass().getName(), "#N row in table " + vg.getChildCount()+ ". Now loading data ...");
@@ -59,6 +60,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
             }
         }
     }
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +91,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         TableLayout tb = findViewById(R.id.schedule_view_table_layout);
         try {
             JSONArray schedule_matrix = jsonData.getJSONArray("horario_tabla");
-            loadScheduleTable(schedule_matrix, tb);
+            ScheduleTableUtils.loadScheduleTable(this, schedule_matrix, tb);
         } catch (JSONException e) {
             Log.e(this.getClass().getName(), "Invalid API Response (No schedule matrix found)");
             e.printStackTrace();
