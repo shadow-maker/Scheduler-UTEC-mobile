@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.*;
 
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
+public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapter.ViewHolder> {
     private List<ScheduleElement> data;
     private LayoutInflater inflater;
     private Context context;
 
-    public ListAdapter(List<ScheduleElement> list, Context context) {
+    public ScheduleListAdapter(List<ScheduleElement> list, Context context) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.data = list;
@@ -26,13 +26,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     @Override
-    public ListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ScheduleListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.schedule_element, null);
-        return new ListAdapter.ViewHolder(view);
+        return new ScheduleListAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ListAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ScheduleListAdapter.ViewHolder holder, final int position) {
         holder.bindData(data.get(position));
     }
 

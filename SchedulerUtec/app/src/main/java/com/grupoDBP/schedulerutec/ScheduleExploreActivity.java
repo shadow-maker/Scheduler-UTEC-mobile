@@ -34,7 +34,7 @@ public class ScheduleExploreActivity extends AppCompatActivity {
         elements.add(new ScheduleElement(2, "Horario 2", "Persona 2", "2021-08-02"));
         elements.add(new ScheduleElement(3, "Horario 3", "Persona 3", "2021-08-03"));
 
-        ListAdapter listAdapter = new ListAdapter(elements, this);
+        ScheduleListAdapter listAdapter = new ScheduleListAdapter(elements, this);
         RecyclerView recyclerView = findViewById(R.id.scheduleList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
