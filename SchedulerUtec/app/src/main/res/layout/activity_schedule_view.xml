@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vista de Horario"/>
+            android:text="@string/schedule_view_title_txt"/>
 
         <!-- NAME AND CREATOR -->
         <TextView
@@ -289,16 +289,50 @@
             android:layout_width="match_parent"/>
 
         <!-- ADD TO FAVORITES -->
-        <TextView
+        <RelativeLayout
+            android:id="@+id/schedule_view_add_favorite_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add to Favorites"/>
-        <Button
-            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to Favorites"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:onClick="onClickScheduleFavoriteAdd"/>
+        </RelativeLayout>
+
+        <!-- DELETE FROM FAVORITES -->
+        <RelativeLayout
+            android:id="@+id/schedule_view_delete_favorite_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add"
-            android:padding="5dp"
-            android:layout_margin="10dp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete from Favorites"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:onClick="onClickScheduleFavoriteDelete"/>
+        </RelativeLayout>
 
         <!-- OWNER OPTIONS -->
         <LinearLayout
@@ -330,7 +364,8 @@
                     android:text="Eliminar Horario"
                     android:layout_alignParentEnd="true"
                     android:padding="5dp"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="10dp"
+                    android:onClick="onClickScheduleDelete"/>
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

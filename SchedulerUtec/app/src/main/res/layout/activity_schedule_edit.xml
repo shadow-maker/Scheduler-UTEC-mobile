@@ -33,32 +33,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/rename"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <EditText
-                    android:id="@+id/rename_edit"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentLeft="true"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/rename_text"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:textAlignment="center"
                     android:text="@string/rename_txt"
                     />
 
+                <EditText
+                    android:id="@+id/rename_edit"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:minWidth="80dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"/>
+
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="@string/submit_txt"
-                    android:layout_marginLeft="120dp"/>
+                    android:onClick="onClickUpdateTitleSubmit"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
 
 
@@ -318,7 +324,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/return_schedule_view_txt"
-                android:onClick="onClickSchedule"/>
+                android:onClick="onClickReturn"/>
             <!-- STATUS -->
             <TextView
                 android:id="@+id/schedule_view_status"
@@ -334,7 +340,8 @@
             <LinearLayout
                 android:id="@+id/schedule_edit_courses_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
         </LinearLayout>
     </ScrollView>
 

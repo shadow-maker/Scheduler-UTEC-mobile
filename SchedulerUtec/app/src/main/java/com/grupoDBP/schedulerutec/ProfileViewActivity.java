@@ -87,9 +87,11 @@ public class ProfileViewActivity extends AppCompatActivity {
 
         // ------------------ API RESPONSE ---------------
         // Process API Response
+        Log.v(this.getClass().getName(), "Sending request for own profile data");
         try {
             // Process response into JSON object
             jsonData = RequestHandeler.readProfileByIdRequest(SessionData.userId);
+            isOwner = (SessionData.userId.equals(jsonData.getString("alumno_id")));
         }
         catch (JSONException e) {
             // Error Handeling
@@ -99,6 +101,7 @@ public class ProfileViewActivity extends AppCompatActivity {
 
         // Create new objects from loaded data
         // ------------------- PROFILE -----------------
+        Log.v(this.getClass().getName(), "Loading of profile data into view");
         try {
             // Get profile TextView
             TextView profileTextView = findViewById(R.id.profile_main_title);
@@ -113,6 +116,7 @@ public class ProfileViewActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         // ------------------- LOAD SCHEDULES -----------------
+        Log.v(this.getClass().getName(), "Loading list of schedules");
         try {
             // Get layout
             LinearLayout scheduleList = findViewById(R.id.profile_schedule_list);
@@ -129,6 +133,7 @@ public class ProfileViewActivity extends AppCompatActivity {
         }
 
         // ------------------- LOAD FAVORITES -----------------
+        Log.v(this.getClass().getName(), "Loading list of favorites");
         try {
             // Get layout
             LinearLayout favoriteList = findViewById(R.id.profile_favorites_list);
@@ -143,7 +148,8 @@ public class ProfileViewActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Owner options:
+        // --------------------- OWNER OPTIONS ---------------------
+        Log.v(this.getClass().getName(), "Validating ownership");
         LinearLayout extraLayout = findViewById(R.id.profile_extra_layout);
         if (isOwner){
             extraLayout.setVisibility(View.GONE);
@@ -160,20 +166,26 @@ public class ProfileViewActivity extends AppCompatActivity {
         EditText titleInput = findViewById(R.id.profile_new_schedule_title);
         String schedule_title = titleInput.getText().toString();
 
-        // Create JSON
-        JSONObject submitJSON = new JSONObject();
+        // Submit Request through API
+        JSONObject newScheduleJSON;
         try {
-            submitJSON.put("horario_titulo", schedule_title);
+            newScheduleJSON = RequestHandeler.createScheduleRequest(schedule_title);
         } catch (JSONException e) {
-            Log.e(this.getClass().getName(),"Unexpected error creating JSON for new schedule");
             e.printStackTrace();
+            Log.w(this.getClass().getName(),"Invalid API response when creating new schedule");
             return;
         }
 
-        // Submit JSON through API
-        // Sample response
-        boolean success = true;
-        String schedule_id = "10";
+        boolean success;
+        String schedule_id;
+        try {
+            success = newScheduleJSON.getBoolean("success");
+            schedule_id = newScheduleJSON.getString("id");
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.w(this.getClass().getName(),"Unable to parse API response");
+            return;
+        }
 
         // Update according to response
         if (success){
@@ -186,7 +198,7 @@ public class ProfileViewActivity extends AppCompatActivity {
         else {
             // Handle error
             Toast.makeText(this, getString(R.string.generic_connection_error), Toast.LENGTH_SHORT).show();
-            Log.w(this.getClass().getName(),"API response was unsuccesful");
+            Log.w(this.getClass().getName(),"Unsuccesful response. Could not create new schedule.");
         }
     }
 
