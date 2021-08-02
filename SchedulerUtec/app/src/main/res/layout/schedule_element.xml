@@ -53,7 +53,7 @@
                 android:text="id"
                 android:textColor="@color/light_schd"
                 android:textSize="18sp"
-                android:textStyle="light" />
+                android:textStyle="normal" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +80,7 @@
                 android:text="Creado por: ..."
                 android:textColor="@color/light_schd"
                 android:textSize="18sp"
-                android:textStyle="light" />
+                android:textStyle="normal" />
         </LinearLayout>
 
 
