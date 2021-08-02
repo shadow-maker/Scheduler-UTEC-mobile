@@ -45,6 +45,12 @@ public class RequestHandeler {
         return new JSONObject(APIresponse);
     }
 
+    public static JSONObject readScheduleAll() throws JSONException {
+        String APIresponse = "{\"empty\":false,\"horarios\":[{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":1,\"horario_titulo\":\"Verano 2020-Opcion1\",\"horario_url\":\"/horarios/1\"},{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":2,\"horario_titulo\":\"Verano 2020-Opcion2\",\"horario_url\":\"/horarios/2\"},{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":3,\"horario_titulo\":\"Verano 2020-Opcion3\",\"horario_url\":\"/horarios/3\"},{\"horario_alumno_apellido\":\"Ortiz Martinez\",\"horario_alumno_nombre\":\"C\\u00e9sar Alejandro\",\"horario_id\":4,\"horario_titulo\":\"SIoSI\",\"horario_url\":\"/horarios/4\"},{\"horario_alumno_apellido\":\"Yupanqui Mera\",\"horario_alumno_nombre\":\"Leonardo Fabricio\",\"horario_id\":5,\"horario_titulo\":\"MiOpcion\",\"horario_url\":\"/horarios/5\"},{\"horario_alumno_apellido\":\"Perez\",\"horario_alumno_nombre\":\"Pedro\",\"horario_id\":6,\"horario_titulo\":\"Verano2 2020\",\"horario_url\":\"/horarios/6\"},{\"horario_alumno_apellido\":\"test\",\"horario_alumno_nombre\":\"tes\",\"horario_id\":9,\"horario_titulo\":\"test\",\"horario_url\":\"/horarios/9\"},{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":10,\"horario_titulo\":\"test\",\"horario_url\":\"/horarios/10\"}],\"success\":true}";
+        // Process response into JSON object
+        return new JSONObject(APIresponse);
+    }
+
     public static JSONObject createScheduleRequest(String schedule_title) throws JSONException {
         // Create JSON
         JSONObject submitJSON = new JSONObject();
