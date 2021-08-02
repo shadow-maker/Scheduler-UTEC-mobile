@@ -29,5 +29,12 @@
     <string name="main_menu_profile_txt">Perfil</string>
     <string name="generic_invalid_credentials">Credenciales invalidas</string>
     <string name="generic_successful_login">Login Exitoso</string>
-
+    <string name="monday_txt">Lunes</string>
+    <string name="tuesday_txt">Martes</string>
+    <string name="wednesday_txt">Miércoles</string>
+    <string name="thursday_txt">Jueves</string>
+    <string name="friday_txt">Viernes</string>
+    <string name="saturday_txt">Sábado</string>
+    <string name="sunday_txt">Domingo</string>
+    <string name="classes_txt">Cursos</string>
 </resources>
