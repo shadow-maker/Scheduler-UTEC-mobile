@@ -41,19 +41,19 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title, createdBy, date;
+        TextView id, title, createdBy;
 
         ViewHolder(View itemView) {
             super(itemView);
+            id = itemView.findViewById(R.id.scheduleId);
             title = itemView.findViewById(R.id.title);
             createdBy = itemView.findViewById(R.id.createdBy);
-            date = itemView.findViewById(R.id.date);
         }
 
         void bindData(final ScheduleElement item) {
+            id.setText(item.getId());
             title.setText(item.getTitle());
             createdBy.setText(item.getCreatedBy());
-            date.setText(item.getDate());
         }
     }
 }

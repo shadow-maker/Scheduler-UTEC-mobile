@@ -63,7 +63,7 @@ public class ScheduleExploreActivity extends AppCompatActivity {
                 String schedule_student_last_name = s.getString("horario_alumno_apellido");
                 String schedule_student_name = schedule_student_first_name + schedule_student_last_name;
 
-                elements.add(new ScheduleElement(schedule_id, schedule_title,  schedule_student_name, "2021-08-01"));
+                elements.add(new ScheduleElement(schedule_id, schedule_title,  schedule_student_name));
 
             }
 
