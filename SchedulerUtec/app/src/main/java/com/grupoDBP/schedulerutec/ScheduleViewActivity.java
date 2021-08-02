@@ -20,7 +20,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
     // CONSTANTS
     public static final String EXTRA_SCHEDULE_ID = "EXTRA_SCHEDULE_ID";
 
-    // CLASS VARIABLES
+    // VARIABLES
     // JSON Objects
     JSONObject jsonData;
     // Is owner
@@ -83,10 +83,10 @@ public class ScheduleViewActivity extends AppCompatActivity {
     // FUNCTION: Schedule Link
     public void onClickScheduleEditButton(View view){
         Log.v(this.getClass().getName(), "Changing to Schedule Edit Activity");
-        Intent i = new Intent(this, ScheduleViewActivity.class);
+        Intent i = new Intent(this, ScheduleEditActivity.class);
         i.putExtra(ScheduleEditActivity.EXTRA_SCHEDULE_EDIT_ID, scheduleId);
         Log.v(this.getClass().getName(), "Starting Intent with Schedule ID: "+scheduleId);
-        startActivityForResult(i,0);
+        startActivity(i);
     }
 
 }

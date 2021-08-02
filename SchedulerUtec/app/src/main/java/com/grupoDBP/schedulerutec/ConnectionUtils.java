@@ -4,7 +4,7 @@ public class ConnectionUtils {
     private static  final String BASE_WEB_URL = "http://127.0.0.1:8888/";
     private static final String BASE_API_URL = "http://127.0.0.1:8888/api";
 
-    public static String getCRegisterUrl(){
+    public static String getRegisterUrl(){
         return BASE_WEB_URL + "/auth/register";
     }
 

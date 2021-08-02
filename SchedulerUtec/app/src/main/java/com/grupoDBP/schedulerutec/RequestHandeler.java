@@ -33,7 +33,7 @@ public class RequestHandeler {
 
     public static JSONObject readProfileByIdRequest(String student_id) throws JSONException {
         // Sample API JSON response
-        String APIresponse = "{\"alumno_nombre\": \"Rodrigo Gabriel\", \"alumno_apellido\":\"Salazar Alva\",\"horarios\": [{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":1,\"horario_titulo\":\"Verano 2020-Opcion1\",\"horario_url\":\"/horarios/1\"}], \"favoritos\":[]}";
+        String APIresponse = "{\"alumno_id\":1,\"alumno_nombre\": \"Rodrigo Gabriel\", \"alumno_apellido\":\"Salazar Alva\",\"horarios\": [{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":1,\"horario_titulo\":\"Verano 2020-Opcion1\",\"horario_url\":\"/horarios/1\"}], \"favoritos\":[]}";
 
         // Process API Response
        return new JSONObject(APIresponse);
@@ -41,6 +41,22 @@ public class RequestHandeler {
 
     public static JSONObject readScheduleByIdRequest(String schedule_id) throws JSONException {
         String APIresponse = "{\"horario_alumno_apellido\":\"Salazar Alva\",\"horario_alumno_nombre\":\"Rodrigo Gabriel\",\"horario_id\":1,\"horario_titulo\":\"Verano 2020-Opcion1\",\"horario_tabla\":[[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"EG0006\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"EG0006\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"EG0006\",\"\",\"\",\"\"],[\"\",\"\",\"EG0006\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"EG0006\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"CS2B01\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"CS2701\",\"\",\"CS2701\",\"\",\"CS2701\",\"\",\"\"],[\"CS2701\",\"\",\"CS2701\",\"\",\"CS2701\",\"\",\"\"]]}";
+        // Process response into JSON object
+        return new JSONObject(APIresponse);
+    }
+
+    public static JSONObject createScheduleRequest(String schedule_title) throws JSONException {
+        // Create JSON
+        JSONObject submitJSON = new JSONObject();
+        try {
+            submitJSON.put("horario_titulo", schedule_title);
+        } catch (JSONException e) {
+            Log.e("Request Handeler","Unexpected error creating JSON for new schedule");
+            e.printStackTrace();
+            return new JSONObject();
+        }
+        // Sample API JSON response
+        String APIresponse = "{\"success\":\"true\",\"id\":\"10\"}";
         // Process response into JSON object
         return new JSONObject(APIresponse);
     }
