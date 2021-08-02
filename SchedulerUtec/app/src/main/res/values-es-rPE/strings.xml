@@ -23,6 +23,7 @@
     <string name="main_menu_create_account_txt">Crear una cuenta</string>
     <string name="main_menu_login_password_txt">Ingrese su contraseña</string>
     <string name="schedule_explore_title_txt">Explorar Horarios</string>
+    <string name="schedule_explore_element_name_label_txt">Creado por:</string>
     <string name="schedule_explore_element_button_txt">Ver</string>
     <string name="schedule_view_edit_title_txt">Editar horario</string>
     <string name="rename_txt">Renombrar</string>
