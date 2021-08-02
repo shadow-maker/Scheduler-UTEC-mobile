@@ -151,7 +151,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         if (RequestHandeler.updateDeleteFavoriteByIdResquest(scheduleId)) {
             isFavorite = false;
             Toast.makeText(this, R.string.schedule_view_delete_favorite_txt, Toast.LENGTH_LONG).show();
-            Log.e(this.getClass().getName(), "Added schedule with ID: "+scheduleId+ " to favorites");
+            Log.v(this.getClass().getName(), "Added schedule with ID: "+scheduleId+ " to favorites");
         }
         updateLoggedInButons();
     }
@@ -161,7 +161,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         if (RequestHandeler.updateAddFavoriteByIdResquest(scheduleId)) {
             isFavorite = true;
             Toast.makeText(this, R.string.schedule_view_add_favorite_txt, Toast.LENGTH_SHORT).show();
-            Log.e(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId+ " from favorites");
+            Log.v(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId+ " from favorites");
         }
         updateLoggedInButons();
     }
@@ -170,7 +170,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
     public void onClickScheduleDelete(View view){
         if (RequestHandeler.deleteScheduleByIdRequest(scheduleId)){
             Toast.makeText(this, R.string.schedule_view_delete_schedule_txt, Toast.LENGTH_SHORT).show();
-            Log.e(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId);
+            Log.v(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId);
             finish();
         }
         else {

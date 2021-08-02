@@ -97,23 +97,54 @@ public class ScheduleEditActivity extends AppCompatActivity {
         String clas_id = button_view.getTag(R.id.TAG_CLAS_ID).toString();
         String clas_subscribed = button_view.getTag(R.id.TAG_CLAS_SUBSCRIBED).toString();
         if (Boolean.parseBoolean(clas_subscribed)) {
-            if (RequestHandeler.deleteClasFromScheduleByIdRequest(scheduleId,clas_id)){
-                button_view.setTag(R.id.TAG_CLAS_SUBSCRIBED, false);
-                button_view.setText(R.string.generic_add_txt);
-                Log.v(this.getClass().getName(), "Class deleted from schedule");
+
+            try{
+                JSONObject jsonResponse = RequestHandeler.deleteClasFromScheduleByIdRequest(scheduleId,clas_id);
+                boolean success = jsonResponse.getBoolean("success");
+                if (success){
+                    // Load new table
+                    JSONArray new_schedule_matrix = jsonResponse.getJSONArray("table_horario");
+                    TableLayout tb = findViewById(R.id.schedule_view_table_layout);
+                    ScheduleTableUtils.loadScheduleTable(this, new_schedule_matrix, tb);
+                    // Response to user
+                    button_view.setTag(R.id.TAG_CLAS_SUBSCRIBED, false);
+                    button_view.setText(R.string.generic_add_txt);
+                    Log.v(this.getClass().getName(), "Class deleted from schedule");
+                }
+                else{
+                    Log.e(this.getClass().getName(), "Could not delete class from schedule");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Log.e(this.getClass().getName(), "Could not parse API response");
             }
-            else{
-                Log.e(this.getClass().getName(), "Could not delete class from schedule");
-            }
+
+
         }else{
-            if (RequestHandeler.addClasToScheduleByIdRequest(scheduleId,clas_id)){
-                button_view.setTag(R.id.TAG_CLAS_SUBSCRIBED, true);
-                button_view.setText(R.string.generic_delete_txt);
-                Log.v(this.getClass().getName(), "Class added to schedule");
+
+            try {
+                JSONObject jsonResponse = RequestHandeler.addClasToScheduleByIdRequest(scheduleId,clas_id);
+                boolean success = jsonResponse.getBoolean("success");
+                if (success){
+                    // Load new table
+                    JSONArray new_schedule_matrix = jsonResponse.getJSONArray("table_horario");
+                    TableLayout tb = findViewById(R.id.schedule_view_table_layout);
+                    ScheduleTableUtils.loadScheduleTable(this, new_schedule_matrix, tb);
+                    // Response to user
+                    button_view.setTag(R.id.TAG_CLAS_SUBSCRIBED, true);
+                    button_view.setText(R.string.generic_delete_txt);
+                    Log.v(this.getClass().getName(), "Class added to schedule");
+                }
+                else{
+                    Log.e(this.getClass().getName(), "Could not add class to schedule");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Log.e(this.getClass().getName(), "Could not parse API response");
             }
-            else{
-                Log.e(this.getClass().getName(), "Could not add class to schedule");
-            }
+
+
+
         }
     }
 

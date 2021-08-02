@@ -95,11 +95,15 @@ public class RequestHandeler {
         return new JSONObject(APIresponse);
     }
 
-    public static boolean addClasToScheduleByIdRequest(String schedule_id, String clas_id) {
-        return true;
+    public static JSONObject addClasToScheduleByIdRequest(String schedule_id, String clas_id) throws JSONException {
+        // Sample API JSON repsonse
+        String APIresponse = "{\"pending_cursos\":\"CS2B01\",\"status_horario\":\"Pending\",\"success\":true,\"table_horario\":[[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"]]}";
+        return new JSONObject(APIresponse);
     }
 
-    public static boolean deleteClasFromScheduleByIdRequest(String schedule_id, String clas_id) {
-        return true;
+    public static JSONObject deleteClasFromScheduleByIdRequest(String schedule_id, String clas_id) throws JSONException {
+        // Sample API JSON repsonse
+        String APIresponse = "{\"pending_cursos\":\"CS2B01\",\"status_horario\":\"Pending\",\"success\":true,\"table_horario\":[[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"CS2B01\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",\"\",\"\",\"\",\"\"]]}";
+        return new JSONObject(APIresponse);
     }
 }
