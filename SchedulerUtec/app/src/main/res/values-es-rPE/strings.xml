@@ -42,5 +42,6 @@
     <string name="generic_successful_logout">Se cerro sesion exitosamente</string>
     <string name="generic_invalid_response">Peticion fue rechazada. Intente denuevo.</string>
     <string name="schedule_edit_title_update_success_txt">El titulo se actualizo exitosamente</string>
+    <string name="schedule_view_title_txt">Vista de Horario</string>
 
 </resources>

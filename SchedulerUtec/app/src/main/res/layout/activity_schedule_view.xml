@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vista de Horario"/>
+            android:text="@string/schedule_view_title_txt"/>
 
         <!-- NAME AND CREATOR -->
         <TextView

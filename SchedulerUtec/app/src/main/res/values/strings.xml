@@ -41,5 +41,6 @@
     <string name="generic_successful_logout">Successfully Logged Out</string>
     <string name="generic_invalid_response">Request was rejected. Try again.</string>
     <string name="schedule_edit_title_update_success_txt">Title successfully updated</string>
+    <string name="schedule_view_title_txt">View Schedule</string>
 
 </resources>
