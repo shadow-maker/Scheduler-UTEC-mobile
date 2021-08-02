@@ -6,4 +6,316 @@
     android:layout_height="match_parent"
     tools:context=".ScheduleViewActivity">
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vista de Horario"/>
+
+        <!-- NAME AND CREATOR -->
+        <TextView
+            android:id="@+id/schedule_view_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/schedule_view_student"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- TABLE -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1,2,3,4,5,6,7">
+                <TableRow
+                    android:layout_height="30dp"
+                    android:background="@color/blue_schd">
+                    <TextView
+                        android:text="Hora"
+                        style="@style/ScheduleTableCell" />
+                    <TextView
+                        android:text="Lunes"
+                        style="@style/ScheduleTableCell" />
+                    <TextView
+                        android:text="Martes"
+                        style="@style/ScheduleTableCell" />
+                    <TextView
+                        android:text="Miercoles"
+                        style="@style/ScheduleTableCell" />
+                    <TextView
+                        android:text="Jueves"
+                        style="@style/ScheduleTableCell" />
+                    <TextView
+                        android:text="Viernes"
+                        style="@style/ScheduleTableCell" />
+                    <TextView
+                        android:text="Sabado"
+                        style="@style/ScheduleTableCell" />
+                    <TextView
+                        android:text="Domingo"
+                        style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="7:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="8:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="9:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="10:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="11:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="12:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="13:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="14:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="15:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="16:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="17:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="18:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="19:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+                <TableRow
+                    android:layout_height="20dp"
+                    android:background="@color/dark_schd">
+                    <TextView
+                        android:text="20:00"
+                        style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                    <TextView style="@style/ScheduleTableCell" />
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+
+        <!-- STATUS -->
+        <TextView
+            android:id="@+id/schedule_view_status"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <!-- ADD TO FAVORITES -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add to Favorites"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:padding="5dp"
+            android:layout_margin="10dp"/>
+
+        <!-- OWNER OPTIONS -->
+        <LinearLayout
+            android:id="@+id/schedule_view_extra_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opciones de Propietario"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar Horario"
+                    android:layout_alignParentStart="true"
+                    android:padding="5dp"
+                    android:layout_margin="10dp"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar Horario"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:layout_margin="10dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
