@@ -22,8 +22,21 @@
     <string name="main_menu_login_hint_txt">Ingrese su ID UTEC</string>
     <string name="main_menu_create_account_txt">Crear una cuenta</string>
     <string name="main_menu_login_password_txt">Ingrese su contraseña</string>
+    <string name="schedule_view_edit_title_txt">Editar horario</string>
+    <string name="rename_txt">Renombrar</string>
+    <string name="submit_txt">Submit</string>
+    <string name="return_schedule_view_txt">Regresar a vista normal</string>
     <string name="main_menu_profile_txt">Perfil</string>
     <string name="generic_invalid_credentials">Credenciales invalidas</string>
     <string name="generic_successful_login">Login Exitoso</string>
+    <string name="monday_txt">Lunes</string>
+    <string name="tuesday_txt">Martes</string>
+    <string name="wednesday_txt">Miércoles</string>
+    <string name="thursday_txt">Jueves</string>
+    <string name="friday_txt">Viernes</string>
+    <string name="saturday_txt">Sábado</string>
+    <string name="sunday_txt">Domingo</string>
+    <string name="classes_txt">Cursos</string>
+    <string name="time_txt">Hora</string>
 
 </resources>
