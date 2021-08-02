@@ -42,7 +42,12 @@ public class MainActivity extends AppCompatActivity {
     public void onClickLogin(View view){
         Log.v(this.getClass().getName(), "Changing to Login Activity");
         Intent i = new Intent(this, LoginActivity.class);
-        startActivity(i);
+        startActivityForResult(i,0);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        updateButtons();
+    }
 }

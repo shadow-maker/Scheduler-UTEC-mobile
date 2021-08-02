@@ -22,4 +22,6 @@
     <string name="main_menu_create_account_txt">Create an account</string>
     <string name="main_menu_login_password_txt">Type in your password</string>
     <string name="main_menu_profile_txt">Profile</string>
+    <string name="generic_invalid_credentials">Invalid Credentials</string>
+    <string name="generic_successful_login">Successful Login</string>
 </resources>
