@@ -63,7 +63,7 @@ La informacion para la conexion con la base de datos se encuentra especificada e
 - '/api/docentes/read': GET con Args{docente_nombre(default=""), docente_apellido(default="")} => JSON con listado de docentes cuyo nombre empieza con docente_nombre y apellido empieza con docente_apellido
 - '/api/alumnos/read': GET con Args{alumno_nombre(default=""), alumno_apellido(default="")} => JSON con listado de alumnos cuyo nombre empieza con alumno_nombre y apellido empieza con alumno_apellido
 - '/api/horarios/read': GET con Args{horario_titulo(default="")} => JSON con listado de horarios cuyo titulo empieza con horario_titulo y
-- '/api/horarios/create' : POST con {horario_titulo} => JSON del horario creado con horario.titulo=horario_titulo para el alumno actual 
+- '/api/horarios/create' : POST con {horario_titulo} => JSON del horario creado con horario.titulo=horario_titulo para el alumno actual
 - '/api/horarios/delete/\<id>' : DELETE => JSON con confirmacion del borrado del horario con horaio.id=id
 - '/api/horarios/update/\<id>/rename' : PUT con {new_titulo} => JSON con confirmacion del cambio de nombre del horario con horario.id=id
 - '/api/horarios/update/\<id>/add-clase' : PUT con {clase_id} => JSON con confirmacion de la adicion de la clase con clase.id=clase_id al horario con horario.id=id
@@ -71,11 +71,24 @@ La informacion para la conexion con la base de datos se encuentra especificada e
 - '/api/favoritos/add/\<id>' : POST => JSON con confirmacion de la adicion del horario con horario.id=id a los favoritos del alumno actual
 - '/api/favoritos/delete/\<id>' : DELETE => JSON con confirmacion de la eliminacion del horario con horario.id=id de los favoritos del alumno actual
 
+### API Endpoints
+- readProfileByIdRequest => /api/alumnos/read/<id>
+- readScheduleByIdRequest => /api/horarios/read/<id>
+- readScheduleAll =>/api/horarios/read
+- createScheduleRequest => /api/horarios/create
+- updateScheduleTitleRequest => /api/horarios/update/<id>/rename
+- updateAddFavoriteByIdResquest => /api/favoritos/add/<id>
+- updateDeleteFavoriteByIdResquest =>/api/favoritos/delete/<id>
+- deleteScheduleByIdRequest => /api/horarios/delete/<id>
+- readCourseListByScheduleIdRequest => /api/cursos/read/por-horario/<id>
+- addClasToScheduleByIdRequest => /api/horarios/update/<id>/add-clase
+- deleteClasFromScheduleByIdRequest => /api/horarios/update/<id>/delete-clase
+
 ## Hosts
 El host y configuracion de deployment se encuentra definida al inicio del archivo run.py. Por defecto, la aplicacion se correa en el host local en el puerto 8888 pero es posible modificar esto editando las variables de acuerdo a la necesidad
 
 ## Forma de Auteticacion
-Los usuarios son definidos por el modelo Alumno con su contraseña siendo la columna password y su identificador la columna codigo. 
+Los usuarios son definidos por el modelo Alumno con su contraseña siendo la columna password y su identificador la columna codigo.
 
 El metodo de autenticacion empleado es basado en cookies. Esto se ha implementado mediante la extension Flask-Login que maneja las sesiones con el objeto LoginManager() guardando las ID de los usuarios activos en la sesión, da restricciones para algunas resquest mediante el decorador @login_required, facilita el uso del “Remember me” que se utiliza mucho en sitios web y proteje las sesiones de los usuarios a ser robados por “cookie thieves”. Asimismo, facilita la identificacion del usuario actual en el backend mediante la variable current_user y prove efunciones varias para la gestion de sesion (login, logout, etc.).
 

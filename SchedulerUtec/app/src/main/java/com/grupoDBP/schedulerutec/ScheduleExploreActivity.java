@@ -3,6 +3,7 @@ package com.grupoDBP.schedulerutec;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -27,6 +28,9 @@ public class ScheduleExploreActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Mostrar boton en parte superior
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_schedule_explore);
 
         init();
@@ -79,6 +83,7 @@ public class ScheduleExploreActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(listAdapter);
+
     }
 
     // ------------ BUTTON CLICK LISTENERS -----------------------
@@ -89,5 +94,14 @@ public class ScheduleExploreActivity extends AppCompatActivity {
         i.putExtra(ScheduleViewActivity.EXTRA_SCHEDULE_ID, schedule_id);
         Log.v(this.getClass().getName(), "Starting Intent with Schedule ID: " + schedule_id);
         startActivity(i);
+    }
+
+    // Implementacion de funcion de back button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
