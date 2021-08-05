@@ -154,27 +154,50 @@ public class ScheduleViewActivity extends AppCompatActivity {
 
     // Function on click delete favorite
     public void onClickScheduleFavoriteDelete(View view){
-        if (RequestHandeler.updateDeleteFavoriteByIdResquest(scheduleId)) {
+        boolean success = false;
+        try {
+            success = RequestHandeler.updateDeleteFavoriteByIdResquest(scheduleId);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e(this.getClass().getName(), "Invalid API Response (Can not parse to JSON)");
+        }
+
+        if (success) {
             isFavorite = false;
             Toast.makeText(this, R.string.schedule_view_delete_favorite_txt, Toast.LENGTH_LONG).show();
-            Log.v(this.getClass().getName(), "Added schedule with ID: "+scheduleId+ " to favorites");
+            Log.v(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId+ " from favorites");
         }
         updateLoggedInButons();
     }
 
     // Function on click delete favorite
     public void onClickScheduleFavoriteAdd(View view){
-        if (RequestHandeler.updateAddFavoriteByIdResquest(scheduleId)) {
+        boolean success = false;
+        try {
+            success = RequestHandeler.updateAddFavoriteByIdResquest(scheduleId);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e(this.getClass().getName(), "Invalid API Response (Can not parse to JSON)");
+        }
+        if (success) {
             isFavorite = true;
             Toast.makeText(this, R.string.schedule_view_add_favorite_txt, Toast.LENGTH_SHORT).show();
-            Log.v(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId+ " from favorites");
+            Log.v(this.getClass().getName(), "Added schedule with ID: "+scheduleId+ " to favorites");
         }
         updateLoggedInButons();
     }
 
     // Function: On click delete schedule
     public void onClickScheduleDelete(View view){
-        if (RequestHandeler.deleteScheduleByIdRequest(scheduleId)){
+        boolean success = false;
+        try {
+            success = RequestHandeler.deleteScheduleByIdRequest(scheduleId);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e(this.getClass().getName(), "Invalid API Response (Can not parse to JSON)");
+        }
+
+        if (success){
             Toast.makeText(this, R.string.schedule_view_delete_schedule_txt, Toast.LENGTH_SHORT).show();
             Log.v(this.getClass().getName(), "Deleted schedule with ID: "+scheduleId);
             finish();

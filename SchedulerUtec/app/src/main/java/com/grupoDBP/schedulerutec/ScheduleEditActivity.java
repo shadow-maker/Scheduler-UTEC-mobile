@@ -222,7 +222,7 @@ public class ScheduleEditActivity extends AppCompatActivity {
         // Submit Request through API
         boolean success;
         try {
-            success = RequestHandeler.updateScheduleTitleRequest(schedule_title);
+            success = RequestHandeler.updateScheduleTitleRequest(scheduleId, schedule_title);
         } catch (JSONException e) {
             Toast.makeText(this, getString(R.string.generic_connection_error), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
