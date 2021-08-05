@@ -1,5 +1,6 @@
 package com.grupoDBP.schedulerutec;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -63,7 +64,7 @@ public class ScheduleExploreActivity extends AppCompatActivity {
                 String schedule_student_last_name = s.getString("horario_alumno_apellido");
                 String schedule_student_name = schedule_student_first_name + schedule_student_last_name;
 
-                elements.add(new ScheduleElement(schedule_id, schedule_title,  schedule_student_name, "2021-08-01"));
+                elements.add(new ScheduleElement(schedule_id, schedule_title,  schedule_student_name));
 
             }
 
@@ -82,6 +83,11 @@ public class ScheduleExploreActivity extends AppCompatActivity {
 
     // ------------ BUTTON CLICK LISTENERS -----------------------
     public void onClickScheduleButty(View view){
-        // TODO
+        Log.v(this.getClass().getName(), "Changing to Schedule Activity");
+        Intent i = new Intent(this, ScheduleViewActivity.class);
+        String schedule_id = view.getTag(R.id.TAG_SCHEDULE_ID).toString();
+        i.putExtra(ScheduleViewActivity.EXTRA_SCHEDULE_ID, schedule_id);
+        Log.v(this.getClass().getName(), "Starting Intent with Schedule ID: " + schedule_id);
+        startActivity(i);
     }
 }

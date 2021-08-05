@@ -4,13 +4,11 @@ public class ScheduleElement {
     public String id;
     public String title;
     public String createdBy;
-    public String date;
 
-    public ScheduleElement(String id, String title, String createdBy, String date) {
+    public ScheduleElement(String id, String title, String createdBy) {
         this.id = id;
         this.title = title;
         this.createdBy = createdBy;
-        this.date = date;
     }
 
     public String getId() {
@@ -35,13 +33,5 @@ public class ScheduleElement {
 
     public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 }

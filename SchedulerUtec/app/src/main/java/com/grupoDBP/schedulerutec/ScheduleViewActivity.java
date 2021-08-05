@@ -98,7 +98,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
         TableLayout tb = findViewById(R.id.schedule_view_table_layout);
         try {
             JSONArray schedule_matrix = jsonData.getJSONArray("horario_tabla");
-            isOwner = (SessionData.userId.equals(jsonData.getString("horario_alumno_id")));
+            isOwner = jsonData.getString("horario_alumno_id").equals(SessionData.userId);
 
             try {
                 isFavorite = jsonData.getBoolean("favorite");

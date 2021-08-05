@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         updateButtons();
-
+        /*
         boton_loggin = findViewById(R.id.boton_loggin);
         boton_loggin.setOnClickListener(new View.OnClickListener() { // ACA ESTA LA FUNCION PARA EL BACK BUTTON Loggin TO MAIN
             @Override
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Loggin_to_Main);
             }
         });
-
+        */
         boton_profile = findViewById(R.id.boton_profile);
         boton_profile.setOnClickListener(new View.OnClickListener() { // ACA ESTA LA FUNCION PARA EL BACK BUTTON PROFILE TO MAIN
             @Override
