@@ -162,7 +162,7 @@ public class RequestHandeler {
 
     public static boolean loginRequest(String id_input, String password_input) throws JSONException {
         // -------------------- URL ---------------------
-        String url = ConnectionUtils.getLoginUrl();
+        String url = ConnectionUtils.getLoginURL();
         // ---------------- SUBMIT JSON -----------------
         JSONObject submitJSON = new JSONObject();
         submitJSON.put("codigo", id_input);

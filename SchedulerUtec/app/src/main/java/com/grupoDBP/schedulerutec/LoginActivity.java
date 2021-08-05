@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onClickCreateAccount(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getRegisterUrl()));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getRegisterURL()));
         startActivity(i);
     }
 

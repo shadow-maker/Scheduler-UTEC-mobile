@@ -209,12 +209,12 @@ public class ProfileViewActivity extends AppCompatActivity {
     }
 
     public void onClickEditProfileButton(View view){
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getEditOwnProfile()));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getEditOwnProfileURL()));
         startActivity(i);
     }
 
     public void onClickDeleteProfileButton(View view){
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getDeleteOwnProfile()));
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getDeleteOwnProfileURL()));
         startActivity(i);
     }
 
