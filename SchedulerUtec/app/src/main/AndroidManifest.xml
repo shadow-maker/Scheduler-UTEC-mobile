@@ -9,18 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MainMenuTheme">
-        <activity android:name=".ScheduleExploreActivity"/>
+        <activity android:name=".ScheduleExploreActivity"
+            android:parentActivityName=".MainActivity"/>
 
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".ScheduleEditActivity"></activity>
-        <activity android:name=".ScheduleViewActivity" />
-        <activity android:name=".ProfileViewActivity" />
+        <activity android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".ScheduleEditActivity"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".ScheduleViewActivity"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".ProfileViewActivity"
+            android:parentActivityName=".MainActivity"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

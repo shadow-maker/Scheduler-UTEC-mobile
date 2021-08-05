@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button boton_explore, boton_profile, boton_loggin;  // Esto inicia el back button
     public void updateButtons() {
         View sectionProfile = findViewById(R.id.main_menu_profile_section);
         View sectionLogin = findViewById(R.id.main_menu_login_section);
@@ -35,6 +35,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         updateButtons();
+
+        boton_loggin = findViewById(R.id.boton_loggin);
+        boton_loggin.setOnClickListener(new View.OnClickListener() { // ACA ESTA LA FUNCION PARA EL BACK BUTTON Loggin TO MAIN
+            @Override
+            public void onClick(View v) {
+                Intent Loggin_to_Main = new Intent(MainActivity.this,LoginActivity.class );
+                startActivity(Loggin_to_Main);
+            }
+        });
+
+        boton_profile = findViewById(R.id.boton_profile);
+        boton_profile.setOnClickListener(new View.OnClickListener() { // ACA ESTA LA FUNCION PARA EL BACK BUTTON PROFILE TO MAIN
+            @Override
+            public void onClick(View v) {
+                Intent Profile_view_to_Main = new Intent(MainActivity.this,ProfileViewActivity.class );
+                startActivity(Profile_view_to_Main);
+            }
+        });
+
+        boton_explore = findViewById(R.id.boton_explore);
+        boton_explore.setOnClickListener(new View.OnClickListener(){    // ACA ESTA LA FUNCION PARA EL BACK BUTTON EXPLORE TO MAIN
+                @Override
+                public void onClick(View view){
+
+                    Intent Explore_to_Main = new Intent(MainActivity.this,ScheduleExploreActivity.class );
+                    startActivity(Explore_to_Main);
+
+                }
+        });
+
+
     }
 
     public void onClickProfile(View view){
