@@ -1,10 +1,12 @@
 package com.grupoDBP.schedulerutec;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -74,6 +76,10 @@ public class ScheduleViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Mostrar boton en parte superior
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_schedule_view);
 
         // ----------------- INTENT PROCESSING -----------------
@@ -177,5 +183,14 @@ public class ScheduleViewActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.generic_invalid_response, Toast.LENGTH_LONG).show();
             Log.e(this.getClass().getName(), "Could not delete schedule with ID: "+scheduleId);
         }
+    }
+
+    // Implementacion de funcion de back button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

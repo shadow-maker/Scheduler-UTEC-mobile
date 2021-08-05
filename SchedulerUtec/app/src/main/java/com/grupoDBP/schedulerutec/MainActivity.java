@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button boton_explore, boton_profile, boton_loggin;  // Esto inicia el back button
+    //Button boton_explore, boton_profile, boton_loggin;  // Esto inicia el back button
     public void updateButtons() {
         View sectionProfile = findViewById(R.id.main_menu_profile_section);
         View sectionLogin = findViewById(R.id.main_menu_login_section);
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         */
+        /*
         boton_profile = findViewById(R.id.boton_profile);
         boton_profile.setOnClickListener(new View.OnClickListener() { // ACA ESTA LA FUNCION PARA EL BACK BUTTON PROFILE TO MAIN
             @Override
@@ -64,8 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
         });
-
-
+           */
     }
 
     public void onClickProfile(View view){

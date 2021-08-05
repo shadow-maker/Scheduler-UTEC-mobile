@@ -19,7 +19,7 @@
             android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".ScheduleViewActivity"
-            android:parentActivityName=".MainActivity"/>
+            />
 
         <activity android:name=".ProfileViewActivity"
             android:parentActivityName=".MainActivity"/>
