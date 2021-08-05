@@ -8,8 +8,6 @@ import org.json.JSONObject;
 
 public class RequestHandeler {
 
-
-
     public static JSONObject readProfileByIdRequest(String student_id) throws JSONException {
         // -------------------- URL ---------------------
         String url = ConnectionUtils.getStudentReadURL(student_id);
