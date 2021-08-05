@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,10 +21,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Mostrar boton en parte superior
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setContentView(R.layout.activity_login);
     }
 
-    public void onClickLoginSubmit(View view){
+    public void onClickLoginSubmit(View view) {
         EditText idInput = findViewById(R.id.login_id);
         EditText passwordInput = findViewById(R.id.login_password);
         String id_input = idInput.getText().toString();
@@ -50,5 +55,14 @@ public class LoginActivity extends AppCompatActivity {
     public void onClickCreateAccount(View view) {
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(ConnectionUtils.getRegisterUrl()));
         startActivity(i);
+    }
+
+    // Implementacion de funcion de back button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
