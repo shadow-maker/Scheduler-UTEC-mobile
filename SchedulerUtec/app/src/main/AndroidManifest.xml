@@ -16,7 +16,7 @@
             android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".ScheduleEditActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".ScheduleViewActivity"/>
 
         <activity android:name=".ScheduleViewActivity"
             />
