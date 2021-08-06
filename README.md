@@ -74,7 +74,9 @@ La informacion para la conexion con la base de datos se encuentra especificada e
 - '/api/alumnos/read/\<id>' : GET => JSON del alumno correspondiente a la id (codigo) proveida
 - '/api/horarios/read/\<id>' : GET => JSON del horario correspondiente a la id proveida
   
-### API Endpoints
+### Conexion a API Endpoints
+La conexion a la API se ve definida por la clase RequestHandeler. A continuación se muestra que metodo conecta a que endpoint:
+  
 - readProfileByIdRequest => /api/alumnos/read/\<id>
 - readScheduleByIdRequest => /api/horarios/read/\<id>
 - readScheduleAll =>/api/horarios/read
