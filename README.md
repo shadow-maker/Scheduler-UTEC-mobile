@@ -70,19 +70,22 @@ La informacion para la conexion con la base de datos se encuentra especificada e
 - '/api/horarios/update/\<id>/delete-clase' : PUT con {clase_id} => JSON con confirmacion de la delicion de la clase con clase.id=clase_id del horario con horario.id=id
 - '/api/favoritos/add/\<id>' : POST => JSON con confirmacion de la adicion del horario con horario.id=id a los favoritos del alumno actual
 - '/api/favoritos/delete/\<id>' : DELETE => JSON con confirmacion de la eliminacion del horario con horario.id=id de los favoritos del alumno actual
-
+- '/api/cursos/read/por-horario/<id>' : GET => JSON con listado de todos los cursos donde se incluyen sus clases ordenadas por seccion y tipo, y cada clase tiene un atributo inscrito que especifica si esta incluida en el horario dado por id
+- '/api/alumnos/read/\<id>' : GET => JSON del alumno correspondiente a la id (codigo) proveida
+- '/api/horarios/read/\<id>' : GET => JSON del horario correspondiente a la id proveida
+  
 ### API Endpoints
-- readProfileByIdRequest => /api/alumnos/read/<id>
-- readScheduleByIdRequest => /api/horarios/read/<id>
+- readProfileByIdRequest => /api/alumnos/read/\<id>
+- readScheduleByIdRequest => /api/horarios/read/\<id>
 - readScheduleAll =>/api/horarios/read
 - createScheduleRequest => /api/horarios/create
-- updateScheduleTitleRequest => /api/horarios/update/<id>/rename
-- updateAddFavoriteByIdResquest => /api/favoritos/add/<id>
-- updateDeleteFavoriteByIdResquest =>/api/favoritos/delete/<id>
-- deleteScheduleByIdRequest => /api/horarios/delete/<id>
+- updateScheduleTitleRequest => /api/horarios/update/\<id>/rename
+- updateAddFavoriteByIdResquest => /api/favoritos/add/\<id>
+- updateDeleteFavoriteByIdResquest =>/api/favoritos/delete/\<id>
+- deleteScheduleByIdRequest => /api/horarios/delete/\<id>
 - readCourseListByScheduleIdRequest => /api/cursos/read/por-horario/<id>
-- addClasToScheduleByIdRequest => /api/horarios/update/<id>/add-clase
-- deleteClasFromScheduleByIdRequest => /api/horarios/update/<id>/delete-clase
+- addClasToScheduleByIdRequest => /api/horarios/update/\<id>/add-clase
+- deleteClasFromScheduleByIdRequest => /api/horarios/update/\<id>/delete-clase
 
 ## Hosts
 El host y configuracion de deployment se encuentra definida al inicio del archivo run.py. Por defecto, la aplicacion se correa en el host local en el puerto 8888 pero es posible modificar esto editando las variables de acuerdo a la necesidad
